@@ -1,0 +1,63 @@
+{
+  "tally": {
+    "nda": 293,
+    "india": 234,
+    "oth": 16
+  },
+  "constituencies": [
+    {
+      "name": "Varanasi",
+      "lead": "NDA",
+      "margin": "1,52,513",
+      "prevWinner": "NDA",
+      "prevMargin": "4,79,505",
+      "swing": -15.2,
+      "total_electors": "19,92,344",
+      "turnout": 56.49,
+      "candidates": [
+        { "name": "Narendra Modi", "party": "NDA", "votes": "6,12,970", "share": 54.24, "status": "Won", "image": "https://unavatar.io/twitter/narendramodi" },
+        { "name": "Ajay Rai", "party": "INDIA", "votes": "4,60,457", "share": 40.74, "status": "Lost", "image": "https://ui-avatars.com/api/?name=Ajay+Rai&background=3b82f6&color=fff" }
+      ]
+    },
+    { "name": "Rae Bareli", "lead": "INDIA", "margin": "3,90,030", "prevWinner": "INDIA", "prevMargin": "1,67,178", "swing": 22.4, "total_electors": "18,15,432", "turnout": 58.12, "candidates": [ { "name": "Rahul Gandhi", "party": "INDIA", "votes": "6,87,649", "share": 66.17, "status": "Won", "image": "https://unavatar.io/twitter/RahulGandhi" } ] },
+    { "name": "Gandhinagar", "lead": "NDA", "margin": "7,44,716", "prevWinner": "NDA", "prevMargin": "5,57,014", "swing": 5.5, "total_electors": "21,50,000", "turnout": 59.8, "candidates": [ { "name": "Amit Shah", "party": "NDA", "votes": "10,10,972", "share": 76.48, "status": "Won", "image": "https://unavatar.io/twitter/AmitShah" } ] },
+    { "name": "Kannauj", "lead": "INDIA", "margin": "1,70,922", "prevWinner": "NDA", "prevMargin": "12,353", "swing": 18.5, "total_electors": "18,50,000", "turnout": 61.2, "candidates": [ { "name": "Akhilesh Yadav", "party": "INDIA", "votes": "6,42,292", "share": 52.74, "status": "Won", "image": "https://unavatar.io/twitter/yadavakhilesh" } ] },
+    { "name": "Hyderabad", "lead": "OTH", "margin": "3,38,087", "prevWinner": "OTH", "prevMargin": "2,82,186", "swing": 8.2, "total_electors": "19,50,000", "turnout": 48.5, "candidates": [ { "name": "Asaduddin Owaisi", "party": "OTH", "votes": "6,61,981", "share": 61.28, "status": "Won", "image": "https://unavatar.io/twitter/asadowaisi" } ] }
+  ],
+  "key_candidates": [
+    { "name": "Narendra Modi", "party": "NDA", "con": "Varanasi", "status": "Winning", "margin": "1.5L", "image": "https://unavatar.io/twitter/narendramodi" },
+    { "name": "Rahul Gandhi", "party": "INDIA", "con": "Rae Bareli", "status": "Winning", "margin": "3.9L", "image": "https://unavatar.io/twitter/RahulGandhi" },
+    { "name": "Amit Shah", "party": "NDA", "con": "Gandhinagar", "status": "Winning", "margin": "7.4L", "image": "https://unavatar.io/twitter/AmitShah" },
+    { "name": "Akhilesh Yadav", "party": "INDIA", "con": "Kannauj", "status": "Winning", "margin": "1.7L", "image": "https://unavatar.io/twitter/yadavakhilesh" },
+    { "name": "Asaduddin Owaisi", "party": "OTH", "con": "Hyderabad", "status": "Winning", "margin": "3.3L", "image": "https://unavatar.io/twitter/asadowaisi" },
+    { "name": "Mamata Banerjee", "party": "INDIA", "con": "Bhowanipore", "status": "Leading", "margin": "1.2L", "image": "https://unavatar.io/twitter/MamataOfficial" },
+    { "name": "Arvind Kejriwal", "party": "INDIA", "con": "New Delhi", "status": "Leading", "margin": "45k", "image": "https://unavatar.io/twitter/ArvindKejriwal" },
+    { "name": "Nitish Kumar", "party": "NDA", "con": "Nalanda", "status": "Leading", "margin": "85k", "image": "https://unavatar.io/twitter/NitishKumar" },
+    { "name": "M.K. Stalin", "party": "INDIA", "con": "Chennai South", "status": "Leading", "margin": "2.1L", "image": "https://unavatar.io/twitter/mkstalin" },
+    { "name": "Eknath Shinde", "party": "NDA", "con": "Thane", "status": "Leading", "margin": "65k", "image": "https://unavatar.io/twitter/mieknathshinde" },
+    { "name": "Pinarayi Vijayan", "party": "INDIA", "con": "Dharmadam", "status": "Leading", "margin": "55k", "image": "https://unavatar.io/twitter/pinarayivijayan" },
+    { "name": "Uddhav Thackeray", "party": "INDIA", "con": "Mumbai North West", "status": "Trailing", "margin": "12k", "image": "https://unavatar.io/twitter/OfficeofUT" },
+    { "name": "Himanta Biswa Sarma", "party": "NDA", "con": "Jalukbari", "status": "Leading", "margin": "95k", "image": "https://unavatar.io/twitter/himantabiswa" },
+    { "name": "Y.S. Jagan Reddy", "party": "OTH", "con": "Pulivendula", "status": "Leading", "margin": "1.8L", "image": "https://unavatar.io/twitter/ysjagan" },
+    { "name": "Naveen Patnaik", "party": "OTH", "con": "Hinjili", "status": "Leading", "margin": "1.4L", "image": "https://unavatar.io/twitter/Naveen_Odisha" }
+  ],
+  "states": [
+    { "name": "Gujarat", "party": "NDA", "efficiency": 96 },
+    { "name": "Tamil Nadu", "party": "INDIA", "efficiency": 100 },
+    { "name": "Uttar Pradesh", "party": "INDIA", "efficiency": 54 },
+    { "name": "West Bengal", "party": "INDIA", "efficiency": 69 },
+    { "name": "Madhya Pradesh", "party": "NDA", "efficiency": 100 }
+  ],
+  "share": [
+    { "party": "NDA", "votes": 44, "seats": 54 },
+    { "party": "INDIA", "votes": 41, "seats": 43 },
+    { "party": "OTH", "votes": 15, "seats": 3 }
+  ],
+  "insights": [
+    "<strong>Upset Alert:</strong> INDIA alliance makes massive gains in Uttar Pradesh heartland.",
+    "<strong>Dominance:</strong> NDA maintains clean sweep momentum in Gujarat and MP.",
+    "<strong>Southern Wave:</strong> INDIA alliance consolidates power in Tamil Nadu and Kerala.",
+    "<strong>Narrow Margins:</strong> 85 seats decided by less than 50,000 votes.",
+    "<strong>Regional Power:</strong> TMC and Samajwadi Party emerge as critical power brokers."
+  ]
+}

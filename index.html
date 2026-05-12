@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ElectraMind | Election Insight Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <header class="main-header">
+        <div class="logo">
+          <span class="logo-icon">⚡</span>
+          <h1>ElectraMind</h1>
+        </div>
+        <div class="header-search">
+          <input type="text" id="con-search" placeholder="Search Constituency (e.g. Varanasi)..." oninput="window.handleSearch(this.value)">
+          <div id="search-results" class="search-dropdown hidden"></div>
+        </div>
+        <div class="header-controls">
+          <div class="theme-switch-wrapper">
+            <span class="theme-icon">🌙</span>
+            <label class="theme-switch">
+              <input type="checkbox" id="theme-toggle" onchange="window.toggleTheme()">
+              <span class="theme-slider"></span>
+            </label>
+            <span class="theme-icon">☀️</span>
+          </div>
+          <div class="voice-toggle">
+            <label class="switch">
+              <input type="checkbox" id="voice-checkbox">
+              <span class="slider round"></span>
+            </label>
+            <span class="voice-label">Voice Alerts</span>
+          </div>
+          <div class="live-indicator">
+            <span class="dot"></span>
+            LIVE
+          </div>
+        </div>
+        <div class="timestamp" id="current-time">12 May 2026, 19:50</div>
+      </header>
+
+      <main class="dashboard">
+        <section class="hero-stats">
+          <div class="tally-card glass" id="party-a">
+            <div class="party-color bjp"></div>
+            <div class="party-info">
+              <h3>NDA</h3>
+              <div class="seat-count">0</div>
+              <div class="trend-indicator up">▲ 12</div>
+            </div>
+          </div>
+
+          <div class="majority-mark">
+            <div class="mark-label">Majority: 272</div>
+            <div class="progress-container">
+              <div class="progress-bar" style="width: 0%"></div>
+              <div class="marker" style="left: 50%"></div>
+            </div>
+          </div>
+
+          <div class="tally-card glass" id="party-b">
+            <div class="party-color congress"></div>
+            <div class="party-info">
+              <h3>INDIA</h3>
+              <div class="seat-count">0</div>
+              <div class="trend-indicator down">▼ 5</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="candidates-carousel">
+          <div class="carousel-header">
+            <h2>Key Candidates</h2>
+          </div>
+        <div class="carousel-container">
+          <button class="carousel-btn prev" onclick="window.scrollCarousel(-1)">❮</button>
+          <div class="carousel-viewport">
+            <div class="candidate-track" id="candidate-list">
+              <!-- 15 Candidate cards will be injected here -->
+            </div>
+          </div>
+          <button class="carousel-btn next" onclick="window.scrollCarousel(1)">❯</button>
+        </div>
+        </section>
+
+        <section class="grid-container">
+          <div class="insight-panel glass">
+            <div class="panel-header">
+              <h2>Smart Insights</h2>
+              <span class="ai-badge">AI Powered</span>
+            </div>
+            <div class="insight-list" id="insight-feed">
+              <!-- Insights will be injected here -->
+              <div class="insight-item loading">Analyzing trends...</div>
+            </div>
+            
+            <div class="sentiment-meter">
+              <div class="sentiment-label">Public Pulse (Sentiment)</div>
+              <div class="meter-track">
+                <div class="meter-fill" id="sentiment-fill" style="width: 65%"></div>
+                <div class="meter-value" id="sentiment-val">Positive</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-panel glass">
+            <div class="panel-header">
+              <h2>Geographic Intelligence</h2>
+              <div class="view-toggle">
+                <button class="active" onclick="window.switchMapView('map')">Map</button>
+                <button onclick="window.switchMapView('demographics')">Demographics</button>
+              </div>
+            </div>
+            <div class="map-wrapper">
+              <div class="map-container" id="india-map-svg"></div>
+              <div id="map-tooltip" class="map-tooltip hidden"></div>
+            </div>
+            <div class="demographics-container hidden" id="demographics-view">
+              <!-- Charts will be injected here -->
+            </div>
+          </div>
+
+          <div class="trending-panel glass">
+            <div class="panel-header">
+              <h2>Margin Intensity</h2>
+            </div>
+            <div class="margin-tiers" id="margin-tiers-chart">
+              <!-- Margin categories will be injected here -->
+            </div>
+            <div class="battleground-list" id="battlegrounds" style="margin-top: 1.5rem;">
+              <!-- Battlegrounds will be injected here -->
+            </div>
+          </div>
+
+          <div class="share-chart-panel glass">
+            <div class="panel-header">
+              <h2>Vote vs Seat Share (%)</h2>
+            </div>
+            <div class="chart-content" id="share-chart">
+              <!-- Chart will be injected here -->
+            </div>
+          </div>
+
+          <div class="leaderboard-panel glass">
+            <div class="panel-header">
+              <h2>Efficiency Leaderboard</h2>
+            </div>
+            <div class="leaderboard-list" id="state-leaderboard">
+              <!-- Leaderboard will be injected here -->
+            </div>
+          </div>
+
+          <div class="coalition-panel glass">
+            <div class="panel-header">
+              <h2>Coalition Builder</h2>
+              <span class="info-icon" title="Simulate alliances with Independents/Others">ⓘ</span>
+            </div>
+            <div class="coalition-controls">
+              <div class="oth-pool">
+                <span class="pool-label">Others Pool:</span>
+                <span class="pool-count" id="oth-pool-count">100</span>
+              </div>
+              <div class="action-buttons">
+                <button class="btn-join nda" onclick="window.buildCoalition('NDA')">+ Join NDA</button>
+                <button class="btn-join india" onclick="window.buildCoalition('INDIA')">+ Join INDIA</button>
+                <button class="btn-reset" onclick="window.resetCoalition()">Reset</button>
+              </div>
+            </div>
+            <div class="coalition-result" id="coalition-message">
+              NDA needs 27 more seats for majority.
+            </div>
+          </div>
+
+          <div class="what-if-panel glass">
+            <div class="panel-header">
+              <h2>What-If Simulator</h2>
+            </div>
+            <div class="scenario-selector">
+              <select id="scenario-select" onchange="window.runScenario(this.value)">
+                <option value="none">Select Scenario...</option>
+                <option value="up-sweep">UP Sweep by INDIA (+40 seats)</option>
+                <option value="south-wave">South Wave for NDA (+25 seats)</option>
+                <option value="oth-surge">Regional Party Surge (+30 seats)</option>
+              </select>
+            </div>
+            <div class="scenario-impact" id="scenario-impact-msg">
+              Select a scenario to see the impact on national tally.
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Full Detail Page (Hidden by default) -->
+      <div id="detail-page" class="detail-view hidden">
+        <div class="detail-nav glass">
+          <button class="back-btn" onclick="window.closeDetailPage()">
+            <span class="back-icon">&larr;</span> Back to Dashboard
+          </button>
+          <div class="nav-constituency" id="nav-con-name">Varanasi</div>
+        </div>
+        <div id="detail-page-content"></div>
+      </div>
+
+      <footer class="main-footer">
+        <div class="ticker-wrap">
+          <div class="ticker" id="bottom-ticker">
+             Fetching latest constituency results... Varanasi: PM leads by 1.2L votes... Wayanad: INC leads by 85k votes...
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
